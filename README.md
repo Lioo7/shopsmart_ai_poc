@@ -1,0 +1,1 @@
+# shopsmart_ai_poc
