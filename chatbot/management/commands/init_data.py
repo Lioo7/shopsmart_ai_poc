@@ -15,6 +15,14 @@ class Command(BaseCommand):
             {"name": "Foldable Gaming Chair", "description": "Compact gaming chair for small spaces", "color": "green", "price": 129.99},
             {"name": "Rocking Gaming Chair", "description": "Gaming chair with rocking function", "color": "purple", "price": 249.99},
             {"name": "Racing Style Gaming Chair", "description": "Sleek racing-inspired gaming chair", "color": "white", "price": 219.99},
+            {"name": "Standing Desk", "description": "Adjustable height desk for ergonomic work", "color": "black", "price": 349.99},
+            {"name": "L-Shaped Computer Desk", "description": "Spacious corner desk for multi-monitor setups", "color": "oak", "price": 189.99},
+            {"name": "Floating Wall Desk", "description": "Space-saving desk that mounts to the wall", "color": "white", "price": 129.99},
+            {"name": "Gaming Mouse", "description": "High-precision mouse with programmable buttons", "color": "black", "price": 59.99},
+            {"name": "Mechanical Keyboard", "description": "Tactile keyboard with customizable RGB lighting", "color": "black", "price": 89.99},
+            {"name": "Ultra-wide Monitor", "description": "34-inch curved display for immersive viewing", "color": "black", "price": 499.99},
+            {"name": "Noise-cancelling Headphones", "description": "Over-ear headphones for focused work or gaming", "color": "silver", "price": 249.99},
+            {"name": "Ergonomic Mouse Pad", "description": "Wrist-rest mouse pad for comfortable use", "color": "black", "price": 19.99},
         ]
 
         for product in products:

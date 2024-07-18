@@ -3,7 +3,7 @@ function sendMessage() {
     var message = userInput.value;
     userInput.value = '';
 
-    displayMessage('You: ' + message);
+    displayMessage('You: ' + message, 'user');
 
     fetch('/chat/', {
         method: 'POST',
@@ -15,14 +15,27 @@ function sendMessage() {
     })
     .then(response => response.json())
     .then(data => {
-        displayMessage('Chatbot: ' + data.response);
+        displayMessage('Chatbot: ' + data.response, 'bot');
+    })
+    .catch(error => {
+        displayMessage('Error: ' + error, 'error');
     });
 }
 
-function displayMessage(message) {
+function displayMessage(message, type) {
     var chatContainer = document.getElementById('chat-container');
     var messageElement = document.createElement('p');
     messageElement.textContent = message;
+
+    // Apply different classes based on message type
+    if (type === 'user') {
+        messageElement.classList.add('user-message');
+    } else if (type === 'bot') {
+        messageElement.classList.add('bot-message');
+    } else {
+        messageElement.classList.add('error'); // Default error class
+    }
+
     chatContainer.appendChild(messageElement);
     chatContainer.scrollTop = chatContainer.scrollHeight;
 }
