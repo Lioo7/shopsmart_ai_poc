@@ -2,10 +2,13 @@ from django.core.management.base import BaseCommand
 from chatbot.models import Product
 
 
+# Define a custom management command
 class Command(BaseCommand):
-    help = 'Initialize product data'
+    help = 'Initialize product data'  # Description of the command
 
+    # Handle method, which contains the logic to be executed when the command is run
     def handle(self, *args, **kwargs):
+        # List of product dictionaries to be added to the database
         products = [
             {"name": "Gamer Pro Chair", "description": "High-end gaming chair with lumbar support", "color": "black", "price": 299.99},
             {"name": "Ergonomic Office Chair", "description": "Comfortable chair for long work hours", "color": "gray", "price": 199.99},
@@ -25,7 +28,9 @@ class Command(BaseCommand):
             {"name": "Ergonomic Mouse Pad", "description": "Wrist-rest mouse pad for comfortable use", "color": "black", "price": 19.99},
         ]
 
+        # Iterate over the products list and create a Product object for each dictionary
         for product in products:
-            Product.objects.create(**product)
+            Product.objects.create(**product)  # Unpack the dictionary into keyword arguments
 
+        # Output a success message to the console
         self.stdout.write(self.style.SUCCESS('Successfully initialized product data'))
